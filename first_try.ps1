@@ -1,3 +1,8 @@
+<#
+Petit script pour tester quelques structures et jouer avec les types de variables.
+Toute ressemblance avec des situations ayant existées est purement fortuite.
+#>
+
 $retard = read-host -prompt "Minutes de retard "
 
 $financement = read-host -prompt "Etes vous finance par la region ? [oui/non]"
