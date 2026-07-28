@@ -9,7 +9,7 @@ $financement = read-host -prompt "Etes vous finance par la region ? [oui/non]"
 <# Structure IF de première intention. 
 Ne prennait pas en compte les réponses différentes et "o" ou "n"
 
-if ($financement -match "oui" -or "") {
+if ($financement -match "oui") {
     write-host "t'es finance, de quoi tu te plains ?"
 }
 else {
