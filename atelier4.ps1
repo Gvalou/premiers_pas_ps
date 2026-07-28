@@ -45,3 +45,34 @@ switch -exact ($choix) {
       }
     Default { Write-Host "Saisie invalide"}
 }
+
+Write-Host "
+
+"
+$jour = (get-date).DayOfWeek
+switch ($jour) {
+    Monday { 
+        Write-Host "Début de semaine, courage !"
+        break 
+    }
+    Tuesday {
+        Write-Host "On a parlé de quoi hier ?"
+        break
+     }
+    Wednesday {
+        Write-Host "Milieu de semaine, on tient bon !"
+        break
+    }
+    Thursday {
+        Write-Host "Plus que deux jours avant le week-end."
+        break
+    }
+    Friday {
+        Write-Host "EPCF ? C’est bientôt le week-end !"
+        break
+    }
+    Default { 
+        Write-Host "C'est le week-end !"
+        break
+    }
+}
