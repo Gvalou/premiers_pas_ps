@@ -1,6 +1,8 @@
 <#
 .DESCRIPTION   
 Voici la description du script
+.LINK
+https://rb.gy/6uoo8w
 #>
 
 write-host "Version de PS : " $PSVersionTable.PSVersion

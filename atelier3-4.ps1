@@ -1,6 +1,8 @@
 <#
 .DESCRIPTION   
 Il reste plein d'optimisation à faire, mais pour l'instant ça fonctionne.
+.LINK
+https://rb.gy/6uoo8w
 #>
 
 write-host "Version de PS : " $PSVersionTable.PSVersion
