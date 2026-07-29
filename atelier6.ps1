@@ -13,16 +13,22 @@ write-host ""
 
 #définition d'un fichier powershell
 $fic="*.ps1"
+
+#variables de dates
 $date=(Get-Date -Format dd/MM/yyyy)
 $heure=(Get-Date -Format HH:mm)
 
+#définition de la variable du chemin
+$chemin=Read-Host -Prompt "rentrer le chemin souhaite "
+
 Write-Host "
 ========== $date $heure ==========
-Nombre de fichiers trouves : $((Get-ChildItem -Recurse c:).length)
+Emplacement : $chemin
+Nombre de fichiers trouves : $((Get-ChildItem $chemin).length)
 " 
 
 #pour chaque fichier PS dans c:
-foreach ($fic in $(Get-ChildItem -Recurse c:))
+foreach ($fic in $(Get-ChildItem $chemin))
 {
     #écrire le nom du fichier trouvé
     Write-Host $fic 
