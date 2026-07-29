@@ -21,16 +21,25 @@ $heure=(Get-Date -Format HH:mm)
 #définition de la variable du chemin
 $chemin=Read-Host -Prompt "rentrer le chemin souhaite "
 
+#définition variable de comptage
+$i=0
+foreach ($fic in $(Get-ChildItem -path $chemin -Filter $fic))
+{
+    $i++ 
+}
+
 Write-Host "
 ========== $date $heure ==========
 Emplacement : $chemin
-Nombre de fichiers trouves : $((Get-ChildItem $chemin).length)
+Nombre de fichiers trouves : $((Get-ChildItem -path $chemin).length)
+Nombre de fichiers .ps1    : $i
 " 
 
-#pour chaque fichier PS dans c:
+<#pour chaque fichier PS dans c:
 foreach ($fic in $(Get-ChildItem $chemin))
 {
     #écrire le nom du fichier trouvé
     Write-Host $fic 
 }
+#>
 
