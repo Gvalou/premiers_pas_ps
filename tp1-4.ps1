@@ -16,7 +16,12 @@ function FicSearch {
         $fic
     )
     $chemin=Read-Host -Prompt "Donner un chemin "
-    foreach ($fic in $(Get-ChildItem -Path $chemin)) {
+    $nbfic=(Get-ChildItem -Path $chemin -File -Filter "*$fic*" | Measure-Object).Count
+    Write-Host "
+    Nous avons trouve $nbfic fichier(s).
+    === $chemin ===
+    "
+    foreach ($fic in $(Get-ChildItem -Path $chemin -File -Filter "*$fic*")) {
         Write-Host $fic
     }
 
@@ -29,6 +34,7 @@ do {
     1) Afficher la date
     2) Lister les fichiers
     3) Quitter
+
     "
     $choix=Read-Host -Prompt "Choisissez un chiffre pour acceder a l'option voulue"
 
@@ -38,9 +44,10 @@ do {
             break
         }
         2 {
-            
+            #Essai de filtrage
+            $fic=Read-Host -Prompt "quel fichier voulez-vous lister ? (* pour tous)" 
             #lister les fichiers
-            FicSearch -fic *
+            FicSearch -fic $fic
             break
         }
         3 { break }
