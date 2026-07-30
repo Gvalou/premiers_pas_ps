@@ -21,8 +21,8 @@ while ($i -gt 0) {
 Write-Host "PAF ! PASTEQUE !"
 Start-Sleep -Seconds 1
 
-<# write-progress à implémenter plus tard
-for ($i = 0 ; $i -le 0 ; $i++) {
+<#write-progress à implémenter plus tard
+for ($i = 0 ; $i -le 10 ; $i++) {
     Write-Progress -Activity "Traitement en cours" -Status "$($i/10*100)% effectue" -PercentComplete ($i/10*100)
     Start-Sleep -Seconds 1
 }
