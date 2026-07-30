@@ -11,3 +11,6 @@ write-host "Bonjour $env:USERNAME"
 write-host "Vous etes connecte sur la machine $env:COMPUTERNAME"
 write-host ""
 
+. .\func.ps1
+
+FicSearch
