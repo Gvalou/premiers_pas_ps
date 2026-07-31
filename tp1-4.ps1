@@ -16,7 +16,8 @@ function FicSearch {
         $fic
     )
     $chemin=Read-Host -Prompt "Donner un chemin "
-    $nbfic=(Get-ChildItem -Path $chemin -File -Filter "*$fic*" | Measure-Object).Count
+    ##soit ().count soit (cmd | measure-object -sum)
+    $nbfic=(Get-ChildItem -Path $chemin -File -Filter "*$fic*").Count
     Write-Host "
     Nous avons trouve $nbfic fichier(s).
     === $chemin ===
@@ -50,7 +51,9 @@ do {
             FicSearch -fic $fic
             break
         }
-        3 { break }
+        3 {
+            break
+        }
         Default { 
             Write-Host "saisie invalide"
             break
