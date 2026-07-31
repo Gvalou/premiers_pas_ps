@@ -45,7 +45,9 @@ switch -exact ($choix) {
     "Quitter" {
         break 
       }
-    Default { Write-Host "Saisie invalide"}
+    Default { Write-Host "Saisie invalide"
+    break 
+    }
 }
 
 Write-Host "
